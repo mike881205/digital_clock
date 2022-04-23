@@ -1,0 +1,15 @@
+.horizontal {
+    color: white;
+    background-color: black;
+    border-top-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    margin: 1%;
+}
+
+.vertical {
+    color: white;
+    background-color: black;
+    border-top-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    margin: 1%;
+}
