@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import NumBox from "../NumBox";
 
-const Clock = () => {
-
-    const [hours, setHours] = useState([0, 0])
-    const [mins, setMins] = useState([0, 0])
-    const [secs, setSecs] = useState([0, 0])
-
+const Clock = React.memo(({ hours, mins, secs }) => {
     return (
         <div className="clockDiv">
             <Container>
@@ -35,6 +30,6 @@ const Clock = () => {
             </Container>
         </div>
     );
-};
+});
 
 export default Clock;
