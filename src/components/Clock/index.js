@@ -2,12 +2,28 @@ import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import NumBox from "../NumBox";
 
-const Clock = React.memo(({ hours, mins, secs }) => {
+const Clock = React.memo(({ setters, sections, numbers }) => {
+
+    const [hours, mins, secs] = sections;
+
     return (
         <div className="clockDiv">
             <Container>
                 <Row>
-                    {hours.map((num, i) => { return (<NumBox key={i} id={num} num={num} />) })}
+                    {
+                        hours.map((num, i) => {
+                            let numObj;
+                            numbers.forEach((number, n) => { if (num === n) numObj = number });
+                            return (
+                                <NumBox
+                                    key={i}
+                                    id={`${i} + ${num}`}
+                                    num={num}
+                                    numObj={numObj}
+                                />
+                            )
+                        })
+                    }
                     <Col>
                         <Row>
                             <Col><h1><strong>.</strong></h1></Col>
@@ -16,7 +32,20 @@ const Clock = React.memo(({ hours, mins, secs }) => {
                             <Col><h1><strong>.</strong></h1></Col>
                         </Row>
                     </Col>
-                    {mins.map((num, i) => { return (<NumBox key={i} id={num} num={num} />) })}
+                    {
+                        mins.map((num, i) => {
+                            let numObj;
+                            numbers.forEach((number, n) => { if (num === n) numObj = number });
+                            return (
+                                <NumBox
+                                    key={i}
+                                    id={`${i} + ${num}`}
+                                    num={num}
+                                    numObj={numObj}
+                                />
+                            )
+                        })
+                    }
                     <Col>
                         <Row>
                             <Col><h1><strong>.</strong></h1></Col>
@@ -25,7 +54,20 @@ const Clock = React.memo(({ hours, mins, secs }) => {
                             <Col><h1><strong>.</strong></h1></Col>
                         </Row>
                     </Col>
-                    {secs.map((num, i) => { return (<NumBox key={i} id={num} num={num} />) })}
+                    {
+                        secs.map((num, i) => {
+                            let numObj;
+                            numbers.forEach((number, n) => { if (num === n) numObj = number });
+                            return (
+                                <NumBox
+                                    key={i}
+                                    id={`${i} + ${num}`}
+                                    num={num}
+                                    numObj={numObj}
+                                />
+                            )
+                        })
+                    }
                 </Row>
             </Container>
         </div>
