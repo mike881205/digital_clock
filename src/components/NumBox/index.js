@@ -6,36 +6,53 @@ const NumBox = ({ num, numObj }) => {
 
     const { top, topRight, topLeft, middle, bottomRight, bottomLeft, bottom } = numObj;
 
+    const setStyle = () => {
+        let topStyleArr = ['none', 'none', 'none', 'none'];
+        let bottomStyleArr = ['none', 'none', 'none', 'none'];
+        let topString;
+        let bottomString;
+
+
+        if (top) topStyleArr[0] = 'solid';
+        if (topRight) topStyleArr[1] = 'solid';
+        if (topLeft) topStyleArr[3] = 'solid';
+        if (bottomRight) bottomStyleArr[1] = 'solid';
+        if (bottom) bottomStyleArr[2] = 'solid';
+        if (bottomLeft) bottomStyleArr[3] = 'solid';
+
+        topString = `${topStyleArr[0]} ${topStyleArr[1]} ${topStyleArr[2]} ${topStyleArr[3]}`;
+        bottomString = `${bottomStyleArr[0]} ${bottomStyleArr[1]} ${bottomStyleArr[2]} ${bottomStyleArr[3]}`;
+
+        return [topString, bottomString];
+    };
+
+    const topStyle = setStyle()[0]
+    const bottomStyle = setStyle()[1]
+
+    console.log(topStyle)
+
     return (
         <Col style={{ margin: '1%' }}>
             <Row>
-                <Col className="line" id="vertical" xs={1} style={!topLeft ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>TL</Col>
-                <Col xs md={7}>
-                    <Row>
-                        <Col className="line" id="horizontal" style={!top ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>Top</Col>
-                    </Row>
-                    <Row>
-                        <Col id="blank" xs md={7}>B</Col>
-                    </Row>
+                <Col
+                    className="top"
+                    style={{ borderStyle: topStyle, borderWidth: 'thick' }}
+                >
                 </Col>
-                <Col className="line" id="vertical" xs={1} style={!topRight ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>TR</Col>
             </Row>
             <Row>
-                <Col xs={1}>B</Col>
-                <Col className="line" id="horizontal" xs md={7} style={!middle ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>Mid</Col>
-                <Col xs={1}>B</Col>
+                <Col
+                    className="middle"
+                    style={!middle ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}
+                >
+                </Col>
             </Row>
             <Row>
-                <Col className="line" id="vertical" xs={1} style={!bottomLeft ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>BL</Col>
-                <Col xs md={7}>
-                    <Row>
-                        <Col id="blank" xs md={7}>B</Col>
-                    </Row>
-                    <Row>
-                        <Col className="line" id="horizontal" style={!bottom ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>Btm</Col>
-                    </Row>
+                <Col
+                    className="bottom"
+                    style={{ borderStyle: bottomStyle, borderWidth: 'thick' }}
+                >
                 </Col>
-                <Col className="line" id="vertical" xs={1} style={!bottomRight ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>BR</Col>
             </Row>
         </Col>
     );

@@ -1,14 +1,13 @@
-.line {
-    color: white;
-    border-top-left-radius: 25%;
-    border-bottom-right-radius: 25%;
+.top, .middle, .bottom {
+    border-top-left-radius: 5%;
+    border-bottom-right-radius: 5%;
     margin: 1%;
 }
 
-#vertical {
-    height: 15vh;
+.top, .bottom {
+    height: 10vh;
 }
 
-#blank {
-    height: 12vh;
+.middle {
+    height: 0.7vh;
 }

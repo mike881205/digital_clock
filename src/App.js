@@ -7,10 +7,10 @@ const App = () => {
 
   const { numbers } = Constants;
 
-  const [hours, setHours] = useState([1, 0])
-  const [mins, setMins] = useState([3, 4])
-  const [secs, setSecs] = useState([2, 6])
-  const [sections, setSections] = useState([hours, mins, secs])
+  const [hours, setHours] = useState([0, 4]);
+  const [mins, setMins] = useState([5, 3]);
+  const [secs, setSecs] = useState([1, 2]);
+  const [sections, setSections] = useState([hours, mins, secs]);
 
   return (
     <div className="App">
