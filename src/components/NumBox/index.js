@@ -8,22 +8,34 @@ const NumBox = ({ num, numObj }) => {
 
     return (
         <Col style={{ margin: '1%' }}>
-            <Row >
-                <Col className="horizontal" style={!top ? { border: 'none' } : { borderTopColor: 'black', borderStyle: 'solid', borderWidth: 'thick' }}>{num}</Col>
+            <Row>
+                <Col className="line" id="vertical" xs={1} style={!topLeft ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>TL</Col>
+                <Col xs md={7}>
+                    <Row>
+                        <Col className="line" id="horizontal" style={!top ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>Top</Col>
+                    </Row>
+                    <Row>
+                        <Col id="blank" xs md={7}>B</Col>
+                    </Row>
+                </Col>
+                <Col className="line" id="vertical" xs={1} style={!topRight ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>TR</Col>
             </Row>
-            <Row >
-                <Col className="vertical" style={!topLeft ? { border: 'none' } : { borderLeftColor: 'black', borderStyle: 'solid', borderWidth: 'thick' }}>{num}</Col>
-                <Col className="vertical" style={!topRight ? { border: 'none' } : { borderRightColor: 'black', borderStyle: 'solid', borderWidth: 'thick' }}>{num}</Col>
+            <Row>
+                <Col xs={1}>B</Col>
+                <Col className="line" id="horizontal" xs md={7} style={!middle ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>Mid</Col>
+                <Col xs={1}>B</Col>
             </Row>
-            <Row >
-                <Col className="horizontal" style={!middle ? { border: 'none' } : { borderTopColor: 'black', borderStyle: 'solid', borderWidth: 'thick' }}>{num}</Col>
-            </Row>
-            <Row >
-                <Col className="vertical" style={!bottomLeft ? { border: 'none' } : { borderLeftColor: 'black', borderStyle: 'solid', borderWidth: 'thick' }}>{num}</Col>
-                <Col className="vertical" style={!bottomRight ? { border: 'none' } : { borderRightColor: 'black', borderStyle: 'solid', borderWidth: 'thick' }}>{num}</Col>
-            </Row>
-            <Row >
-                <Col className="horizontal" style={!bottom ? { border: 'none' } : { borderBottomColor: 'black', borderStyle: 'solid', borderWidth: 'thick' }}>{num}</Col>
+            <Row>
+                <Col className="line" id="vertical" xs={1} style={!bottomLeft ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>BL</Col>
+                <Col xs md={7}>
+                    <Row>
+                        <Col id="blank" xs md={7}>B</Col>
+                    </Row>
+                    <Row>
+                        <Col className="line" id="horizontal" style={!bottom ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>Btm</Col>
+                    </Row>
+                </Col>
+                <Col className="line" id="vertical" xs={1} style={!bottomRight ? { backgroundColor: 'none' } : { backgroundColor: 'black' }}>BR</Col>
             </Row>
         </Col>
     );
