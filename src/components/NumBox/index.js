@@ -29,8 +29,6 @@ const NumBox = ({ num, numObj }) => {
     const topStyle = setStyle()[0]
     const bottomStyle = setStyle()[1]
 
-    console.log(topStyle)
-
     return (
         <Col style={{ margin: '1%' }}>
             <Row>

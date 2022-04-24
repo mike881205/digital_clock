@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import NumBox from "../NumBox";
 
-const Clock = React.memo(({ setters, sections, numbers }) => {
+const Clock = React.memo(({ sections, numbers }) => {
 
     const [hours, mins, secs] = sections;
 
@@ -29,6 +29,9 @@ const Clock = React.memo(({ setters, sections, numbers }) => {
                             <Col><h1><strong>.</strong></h1></Col>
                         </Row>
                         <Row>
+                            <Col style={{ height: '5vh' }}></Col>
+                        </Row>
+                        <Row>
                             <Col><h1><strong>.</strong></h1></Col>
                         </Row>
                     </Col>
@@ -49,6 +52,9 @@ const Clock = React.memo(({ setters, sections, numbers }) => {
                     <Col>
                         <Row>
                             <Col><h1><strong>.</strong></h1></Col>
+                        </Row>
+                        <Row>
+                            <Col style={{ height: '5vh' }}></Col>
                         </Row>
                         <Row>
                             <Col><h1><strong>.</strong></h1></Col>
